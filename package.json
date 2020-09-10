@@ -34,7 +34,7 @@
     "flow-bin": "^0.97.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.3",
-    "standard-version": "^5.0.2",
+    "standard-version": "^8.0.1",
     "tape": "^4.10.1"
   }
 }
