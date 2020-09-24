@@ -4,7 +4,7 @@
  * manual types are more strict for fields, and are more useful in code
  */
 
-export type Key = string | Array<string>
+export type Key = string | Array<string | number>
 
 type BaseField = {|
   // A unique id used to reference the field from presets
