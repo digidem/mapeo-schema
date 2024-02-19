@@ -139,7 +139,10 @@ export const convertPreset: ConvertFunction<'preset'> = (
   }
 }
 
-export const convertRole: ConvertFunction<'role'> = (message, versionObj) => {
+export const convertMembership: ConvertFunction<'membership'> = (
+  message,
+  versionObj
+) => {
   if (message.roleId.length === 0) {
     throw new Error('Invalid roleId')
   }
