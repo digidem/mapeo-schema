@@ -17,6 +17,7 @@ message DeviceInfo_1 {
     mobile = 0;
     tablet = 1;
     desktop = 2;
+    selfHostedServer = 3;
   }
 
   string name = 5;
