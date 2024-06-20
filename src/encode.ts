@@ -14,7 +14,7 @@ import {
   convertObservation,
   convertPreset,
   convertProjectSettings,
-  convertRole,
+  convertMembership,
   convertDeviceInfo,
   convertCoreOwnership,
   convertIcon,
@@ -61,8 +61,8 @@ export function encode(
       protobuf = Encode[mapeoDoc.schemaName](message).finish()
       break
     }
-    case 'role': {
-      const message = convertRole(mapeoDoc)
+    case 'membership': {
+      const message = convertMembership(mapeoDoc)
       protobuf = Encode[mapeoDoc.schemaName](message).finish()
       break
     }

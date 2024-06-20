@@ -14,7 +14,7 @@ type SupportedSchemaNames =
   | 'observation'
   | 'field'
   | 'preset'
-  | 'role'
+  | 'membership'
   | 'icon'
   | 'deviceInfo'
   | 'coreOwnership'

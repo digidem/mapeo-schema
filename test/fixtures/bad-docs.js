@@ -26,12 +26,12 @@ export const badDocs = [
     },
   },
   {
-    text: 'role doc with empty roleId',
-    /** @type {import('../../dist/index.js').Role} */
+    text: 'membership doc with empty roleId',
+    /** @type {import('../../dist/index.js').Membership} */
     doc: {
       docId: cachedValues.docId,
       versionId: cachedValues.versionId,
-      schemaName: 'role',
+      schemaName: 'membership',
       createdAt: cachedValues.createdAt,
       updatedAt: cachedValues.updatedAt,
       createdBy: cachedValues.createdBy,
