@@ -22,7 +22,7 @@ import {
 } from '../types.js'
 import { ExhaustivenessError, VersionIdObject, getVersionId } from './utils.js'
 import type { Observation, Track } from '../index.js'
-import type { Observation_5_Attachment } from '../proto/observation/v5.js'
+import type { Observation_1_Attachment } from '../proto/observation/v1.js'
 import type { Track_1_Position } from '../proto/track/v1.js'
 
 /** Function type for converting a protobuf type of any version for a particular
@@ -362,7 +362,7 @@ function convertAttachment({
   name,
   type,
   hash,
-}: Observation_5_Attachment): Observation['attachments'][number] {
+}: Observation_1_Attachment): Observation['attachments'][number] {
   return {
     driveDiscoveryId: driveDiscoveryId.toString('hex'),
     name,

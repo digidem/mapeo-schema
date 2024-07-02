@@ -13,9 +13,9 @@ import { TagValue_1, type TagValue_1_PrimitiveValue } from '../proto/tags/v1.js'
 import { Icon } from '../schema/icon.js'
 import { type Icon_1_IconVariant } from '../proto/icon/v1.js'
 import {
-  Observation_5_Metadata,
-  type Observation_5_Attachment,
-} from '../proto/observation/v5.js'
+  Observation_1_Metadata,
+  type Observation_1_Attachment,
+} from '../proto/observation/v1.js'
 import { ExhaustivenessError, parseVersionId } from './utils.js'
 import {
   CoreOwnership,
@@ -93,8 +93,8 @@ export const convertObservation: ConvertFunction<'observation'> = (
     return { id: Buffer.from(ref.id, 'hex') }
   })
   const attachments = mapeoDoc.attachments.map(convertAttachment)
-  const metadata: Observation_5_Metadata = mapeoDoc.metadata && {
-    ...Observation_5_Metadata.fromPartial(mapeoDoc.metadata),
+  const metadata: Observation_1_Metadata = mapeoDoc.metadata && {
+    ...Observation_1_Metadata.fromPartial(mapeoDoc.metadata),
   }
 
   return {
@@ -301,7 +301,7 @@ function convertTagPrimitive(
 
 function convertAttachment(
   attachment: Observation['attachments'][number]
-): Observation_5_Attachment {
+): Observation_1_Attachment {
   return {
     driveDiscoveryId: Buffer.from(attachment.driveDiscoveryId, 'hex'),
     name: attachment.name,

@@ -7,7 +7,7 @@ import "tags/v1.proto";
 import "common/v1.proto";
 import "options.proto";
 
-message Field_2 {
+message Field_1 {
   // **DO NOT CHANGE dataTypeId** generated with `openssl rand -hex 6`
   option (dataTypeId) = "9c5abfbee243";
   option (schemaName) = "field";

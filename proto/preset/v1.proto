@@ -7,7 +7,7 @@ import "tags/v1.proto";
 import "common/v1.proto";
 import "options.proto";
 
-message Preset_2 {
+message Preset_1 {
   // **DO NOT CHANGE dataTypeId** generated with `openssl rand -hex 6`
   option (dataTypeId) = "d6aa854b7a99";
   option (schemaName) = "preset";
