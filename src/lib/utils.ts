@@ -62,7 +62,7 @@ export function parseVersionId(versionId: string): VersionIdObject {
 /**
  * @template {import('@mapeo/schema').MapeoDoc & { forks?: string[] }} T
  * @param {T} doc
- * @returns {Omit<T, 'docId' | 'versionId' | 'links' | 'forks' | 'createdAt' | 'updatedAt' | 'createdBy' | 'deleted'>}
+ * @returns {Omit<T, 'docId' | 'versionId' | 'originalVersionId' | 'links' | 'forks' | 'createdAt' | 'updatedAt' | 'deleted'>}
  */
 export function valueOf<TDoc extends MapeoDoc>(
   doc: TDoc & { forks?: string[] }
@@ -71,11 +71,11 @@ export function valueOf<TDoc extends MapeoDoc>(
   const {
     docId,
     versionId,
+    originalVersionId,
     links,
     forks,
     createdAt,
     updatedAt,
-    createdBy,
     deleted,
     ...rest
   } = doc

@@ -5,10 +5,10 @@ const date = new Date().toJSON()
 export const cachedValues = {
   docId: randomBytes(32).toString('hex'),
   versionId: `${randomBytes(32).toString('hex')}/0`,
+  originalVersionId: `${randomBytes(32).toString('hex')}/0`,
   projectId: randomBytes(32).toString('hex'),
   authorId: randomBytes(32).toString('hex'),
   coreId: randomBytes(32).toString('hex'),
-  createdBy: randomBytes(32).toString('hex'),
   createdAt: date,
   updatedAt: date,
   attachments: {

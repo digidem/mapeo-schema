@@ -1,3 +1,4 @@
+import type { SetOptional } from 'type-fest'
 import { CurrentProtoTypes } from '../proto/types.js'
 import {
   ProtoTypesWithSchemaInfo,
@@ -28,7 +29,7 @@ import {
  * schema name, and returning the most recent JSONSchema type */
 type ConvertFunction<TSchemaName extends SchemaName> = (
   mapeoDoc: Extract<
-    OmitUnion<MapeoDocInternal, 'versionId'>,
+    OmitUnion<MapeoDocInternal, 'versionId' | 'originalVersionId'>,
     { schemaName: TSchemaName }
   >
 ) => CurrentProtoTypes[TSchemaName]
@@ -125,7 +126,8 @@ export const convertDeviceInfo: ConvertFunction<'deviceInfo'> = (mapeoDoc) => {
 }
 
 export const convertCoreOwnership = (
-  mapeoDoc: Omit<CoreOwnership, 'versionId'> & CoreOwnershipSignatures
+  mapeoDoc: Omit<CoreOwnership, 'versionId' | 'originalVersionId'> &
+    CoreOwnershipSignatures
 ): CurrentProtoTypes['coreOwnership'] => {
   return {
     common: convertCommon(mapeoDoc),
@@ -225,13 +227,13 @@ export const convertTrack: ConvertFunction<'track'> = (mapeoDoc) => {
 }
 
 function convertCommon(
-  common: Omit<MapeoCommon, 'versionId'>
+  common: SetOptional<MapeoCommon, 'versionId' | 'originalVersionId'>
 ): ProtoTypesWithSchemaInfo['common'] {
   return {
     docId: Buffer.from(common.docId, 'hex'),
+    originalVersionId: common.originalVersionId,
     createdAt: common.createdAt,
     updatedAt: common.updatedAt,
-    createdBy: Buffer.from(common.createdBy, 'hex'),
     links: common.links.map((link) => parseVersionId(link)),
     deleted: common.deleted,
   }

@@ -11,8 +11,7 @@ message Common_1 {
   repeated VersionId_1 links = 2;
   google.protobuf.Timestamp createdAt = 3 [(required) = true];
   google.protobuf.Timestamp updatedAt = 4 [(required) = true];
-  // 32-byte hash of the discovery key of a core
-  bytes createdBy = 5 [(required) = true];
+  optional string originalVersionId = 5;
   bool deleted = 6 [(required) = true];
 }
 /* ignored fields and differences from common.json jsonSchema
