@@ -14,7 +14,7 @@ import {
   convertField,
   convertObservation,
   convertPreset,
-  convertRole,
+  convertMembership,
   convertDeviceInfo,
   convertCoreOwnership,
   convertIcon,
@@ -69,8 +69,8 @@ export function decode(
       return convertField(message, versionObj)
     case 'preset':
       return convertPreset(message, versionObj)
-    case 'role':
-      return convertRole(message, versionObj)
+    case 'membership':
+      return convertMembership(message, versionObj)
     case 'deviceInfo':
       return convertDeviceInfo(message, versionObj)
     case 'coreOwnership':

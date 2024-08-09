@@ -6,10 +6,10 @@ import "google/protobuf/timestamp.proto";
 import "common/v1.proto";
 import "options.proto";
 
-message Role_1 {
+message Membership_1 {
   // **DO NOT CHANGE dataTypeId** generated with `openssl rand -hex 6`
   option (dataTypeId) = "69acce0ea09b";
-  option (schemaName) = "role";
+  option (schemaName) = "membership";
 
   Common_1 common = 1;
 

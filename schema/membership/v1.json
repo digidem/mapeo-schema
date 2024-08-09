@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://mapeo.world/schemas/role/v1.json",
-  "title": "Role",
+  "$id": "http://mapeo.world/schemas/membership/v1.json",
+  "title": "Membership",
   "type": "object",
   "properties": {
     "schemaName": {
       "type": "string",
-      "const": "role"
+      "const": "membership"
     },
     "roleId": {
       "type": "string",
@@ -15,7 +15,7 @@
     "fromIndex": {
       "type": "integer",
       "minimum": 0,
-      "description": "This is the index of the auth core that this role applies to (identified by the `docId`) to apply this role from. E.g. documents in the auth core assigned this role from this index will be evaluated according to this role."
+      "description": "This is the index of the auth core that this membership applies to (identified by the `docId`) to apply the role from. E.g. documents in the auth core assigned this membership from this index will be evaluated according to the assigned roleId."
     }
   },
   "required": ["schemaName", "roleId", "fromIndex"],
